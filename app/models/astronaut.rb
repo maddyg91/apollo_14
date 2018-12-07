@@ -7,4 +7,8 @@ class Astronaut < ApplicationRecord
     average(:age)
   end
 
+  def self.all_missions
+    self.select('astronauts.*').joins(:missions)
+  end
+
 end
